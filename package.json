@@ -1,0 +1,48 @@
+{
+  "name": "quickmath",
+  "version": "0.0.1",
+  "description": "Basic arithmetic practice application",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jglogan/quickmath.git"
+  },
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/jglogan/quickmath/issues"
+  },
+  "author": {
+    "name": "John Logan"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "src/main.js",
+  "scripts": {
+    "start:dev": "webpack serve --config=webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack.common.js --mode production",
+    "package": "npm run build"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.6.0"
+  }
+}

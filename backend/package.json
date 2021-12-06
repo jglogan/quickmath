@@ -1,0 +1,23 @@
+{
+  "name": "quickmath-server",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "report:license": "license-checker --production --csv --out license-report.csv"
+  },
+  "keywords": [],
+  "author": "John Logan",
+  "license": "MIT",
+  "description": "Web server for math app",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-history-api-fallback": "^2.2.1",
+    "express-ipfilter": "^1.2.0",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0"
+  }
+}
