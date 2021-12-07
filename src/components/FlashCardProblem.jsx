@@ -1,12 +1,13 @@
 import React from 'react'
 import {useLocation} from 'react-router-dom';
-import Box from './Box.jsx';
-import {FlashCard, FlashCardText, FlashCardUnknown} from './FlashCard.jsx';
 
-export const BasicProblem = props => {
+import Box from './Box.jsx';
+import {FlashCard} from './FlashCard.jsx';
+
+export const FlashCardProblem = props => {
     const location = useLocation();
 
-    const problemGenerator = props.problemGenerator || (() => ({ values: [2, '+', 2, '=', 4], unknownIndex: 4}));
+    const {generateProblem} = props;
     const [answer, setAnswer] = React.useState('');
     const [problem, setProblem] = React.useState({values: []});
     const [feedback, setFeedback] = React.useState('\u00a0');
@@ -20,10 +21,10 @@ export const BasicProblem = props => {
 
     const checkAnswer = e => {
         e.preventDefault();
-        if (problem.values[problem.unknownIndex] === parseInt(answer)) {
+        if (problem.answer === parseInt(answer)) {
             setAnswer('');
             setFeedback('Correct!');
-            setProblem(problemGenerator());
+            setProblem(generateProblem());
         }
         else {
             setAnswer('');
@@ -32,25 +33,18 @@ export const BasicProblem = props => {
     };
 
     React.useEffect(() => {
-        console.log('location changed', location);
-        setProblem(problemGenerator());
+        setProblem(generateProblem());
     }, [location]);
 
     return (
         <Box gap='10px'>
             <FlashCard onSubmit={checkAnswer}>
-                {problem.values.map((value, index) => {
-                    if (index === problem.unknownIndex) {
-                        return <FlashCardUnknown  key={index} placeholder='?' autoFocus value={answer} onChange={validateInput} />;
-                    }
-                    else {
-                        return <FlashCardText key={index} >{'' + value}</FlashCardText>
-                    }
-                })}
+                {problem.layout && problem.layout(answer, validateInput) || null}
             </FlashCard>
+
             <h3>{feedback}</h3>
         </Box>
     );
 };
 
-export default BasicProblem;
+export default FlashCardProblem;

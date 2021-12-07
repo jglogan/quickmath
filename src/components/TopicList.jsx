@@ -12,14 +12,22 @@ const ListContainer = styled.ul`
 
 const ListItem = styled.li`
     margin: 0px;
-    padding: 4px 20px 4px 4px;
+    padding: 8px 40px 8px 12px;
     border-bottom: 1px solid gray;
+
+    &:first-child {
+        border-top: 1px solid gray;
+    }
 
     &.active {
         background-color: white;
         a {
             color: black;
         }
+    }
+
+    h4 {
+        margin: 0;
     }
 
     a {

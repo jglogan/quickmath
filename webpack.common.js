@@ -50,7 +50,6 @@ module.exports = {
     alias: {
       Assets: path.resolve(__dirname, 'src/assets'),
       Components: path.resolve(__dirname, 'src/components'),
-      Problems: path.resolve(__dirname, 'src/problems'),
     }
   },
   stats: {

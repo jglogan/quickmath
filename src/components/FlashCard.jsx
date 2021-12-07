@@ -10,31 +10,38 @@ export const FlashCard = styled.form`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 4vmin;
     background: white;
     text: black;
     width: 60vmin;
     height: 36vmin;
-    border-radius: 8px;
-    font-size: 8vmin;
+    border-radius: 16px;
     color: black;
 }`;
 
 export const FlashCardUnknown = styled.input`
-    width: 10vmin;
-    height: 10vmin;
-    display: flex;
+    width: ${props => `${props.scale * 10.0 || 10}vmin`};
+    margin: 50% 0;
     text-align: center;
     align-items: center;
     border 1px solid lightgray;
-    font-size: 8vmin;
+    font-size: ${props => `${props.scale * 10.0 || 10}vmin`};
     font-family: Helvetica, Arial, sans-serif;
 }`;
 
-export const FlashCardText = styled(Box)`
-    width: 10vmin;
-    height: 10vmin;
-    display: flex;
+export const FlashCardSquareText = styled(Box)`
+    width: ${props => `${props.scale * 10.0 || 10}vmin`};
+    margin: 50% 0;
     justify-content: center;
     align-items: center;
-}`;
+    font-size: ${props => `${props.scale * 10.0 || 10}vmin`};
+    font-family: Helvetica, Arial, sans-serif;
+}}`;
+
+export const FlashCardText = styled(Box)`
+    justify-content: center;
+    align-items: center;
+    font-size: ${props => `${props.scale * 10.0 || 10}vmin`};
+    font-family: Helvetica, Arial, sans-serif;
+}}`;
 
