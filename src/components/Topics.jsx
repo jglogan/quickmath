@@ -20,11 +20,11 @@ const threeSquareLayout = (values, unknownIndex) => {
     );
 };
 
-const leftSideLayout = leftSide => {
+const leftSideLayout = (leftSide, scale) => {
     return (userAnswer, validateInput) => (
         <Box direction='row'>
-            <Box><FlashCardText scale={0.8}>{'' + leftSide}</FlashCardText></Box>
-            <Box><FlashCardSquareText scale={0.8}>=</FlashCardSquareText></Box>
+            <Box><FlashCardText scale={0.75}>{'' + leftSide}</FlashCardText></Box>
+            <Box><FlashCardSquareText scale={0.75}>=</FlashCardSquareText></Box>
             <Box><FlashCardUnknown value={userAnswer} onChange={validateInput} scale={0.8} placeholder='?' autoFocus /></Box>
         </Box>    
     );
@@ -91,7 +91,7 @@ const greatestCommonDivisor = () => {
     const factor2 = primes[Math.floor(Math.random() * primes.length)] * gcd;
 
     return {
-        layout: leftSideLayout(`GCD(${factor1}, ${factor2})`),
+        layout: leftSideLayout(`GCD(${factor1}, ${factor2})`, 0.75),
         answer: gcd,
     };
 };
@@ -120,7 +120,7 @@ const leastCommonMultiple = () => {
     const lcm = factor1 * factor2 / gcd;
 
     return {
-        layout: leftSideLayout(`LCM(${factor1}, ${factor2})`),
+        layout: leftSideLayout(`LCM(${factor1}, ${factor2})`, 0.75),
         answer: lcm,
     };
 };

@@ -5,6 +5,13 @@ import Box from './Box.jsx';
 import TopicList from 'Components/TopicList.jsx';
 import topics from 'Components/Topics.jsx';
 
+//
+//  TODO:
+//    - Topic lifecycle, with start and end cards, 10 questions, progress, and scoring.
+//    - Timed topic lifecycle.
+//    - Record best daily result per topic, and chart results.
+//    - Stand up on Amazon.
+//
 const App = props => {
     return (
         <Router>
