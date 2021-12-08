@@ -10,7 +10,7 @@ import topics from 'Components/Topics.jsx';
 //    - Topic lifecycle, with start and end cards, 10 questions, progress, and scoring.
 //    - Timed topic lifecycle.
 //    - Record best daily result per topic, and chart results.
-//    - Stand up on Amazon.
+//    - Get layout working on tablet and mobile.
 //
 const App = props => {
     return (
@@ -22,7 +22,7 @@ const App = props => {
                         <TopicList topics={topics} />
                     </Box>
                 </Box>
-                <Box flex='1'>
+                <Box flex='1' justify='start' height='100%'>
                     <Routes>
                         {topics.map(topic => <Route key={topic.path} path={topic.path} element={topic.component} />)}
                     </Routes>
