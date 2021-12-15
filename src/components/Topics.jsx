@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Box from './Box.jsx';
+import Box from 'Components/Box.jsx';
 
 import FlashCardProblem from 'Components/FlashCardProblem.jsx';
-import {FlashCard, FlashCardSquareText, FlashCardText, FlashCardUnknown} from './FlashCard.jsx';
+import {FlashCardSquareText, FlashCardText, FlashCardUnknown} from './FlashCard.jsx';
 
 const threeSquareLayout = (values, unknownIndex) => {
     return (userAnswer, validateInput) => (
@@ -129,32 +129,32 @@ export const topics = [
     {
         title: 'Level 1 Addition',
         key: 'addition-1',
-        component: <FlashCardProblem generateProblem={addition1} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={addition1} onAnswer={onAnswer}/>,
     },
     {
         title: 'Level 2 Addition',
         key: 'addition-2',
-        component: <FlashCardProblem generateProblem={addition2} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={addition2} onAnswer={onAnswer}/>,
     },
     {
         title: 'Level 1 Multiplication',
         key: 'multiplication-1',
-        component: <FlashCardProblem generateProblem={multiplication1} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={multiplication1} onAnswer={onAnswer}/>,
     },
     {
         title: 'Level 2 Multiplication',
         key: 'multiplication-2',
-        component: <FlashCardProblem generateProblem={multiplication2} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={multiplication2} onAnswer={onAnswer}/>,
     },
     {
         title: 'Greatest Common Divisor',
         key: 'gcd',
-        component: <FlashCardProblem generateProblem={greatestCommonDivisor} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={greatestCommonDivisor} onAnswer={onAnswer}/>,
     },
     {
         title: 'Least Common Multiple',
         key: 'lcm',
-        component: <FlashCardProblem generateProblem={leastCommonMultiple} />,
+        generateComponent: onAnswer => <FlashCardProblem generateProblem={leastCommonMultiple} onAnswer={onAnswer}/>,
     },
 ];
 

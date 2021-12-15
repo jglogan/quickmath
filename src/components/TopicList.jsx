@@ -3,8 +3,6 @@ import {Link, useLocation} from 'react-router-dom';
 
 import styled from 'styled-components'
 
-import Box from './Box.jsx';
-
 const ListContainer = styled.ul`
     padding: 0px;
     list-style-type: none;

@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
 
 import Box from './Box.jsx';
+import TopicLifecycle from 'Components/TopicLifecycle.jsx';
 import TopicList from 'Components/TopicList.jsx';
 import topics from 'Components/Topics.jsx';
 
@@ -24,7 +25,7 @@ const App = props => {
                 </Box>
                 <Box flex='1' justify='start' height='100%'>
                     <Routes>
-                        {topics.map(topic => <Route key={topic.path} path={topic.path} element={topic.component} />)}
+                        {topics.map(topic => <Route key={topic.path} path={topic.path} element={<TopicLifecycle generateComponent={topic.generateComponent} />} />)}
                     </Routes>
                 </Box>
             </Box>
