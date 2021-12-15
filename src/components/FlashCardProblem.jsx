@@ -1,8 +1,8 @@
 import React from 'react'
 import {useLocation} from 'react-router-dom';
 
-import Box from './Box.jsx';
-import {FlashCard} from './FlashCard.jsx';
+import Box from 'Components/Box.jsx';
+import {FlashCard} from 'Components/FlashCard.jsx';
 
 export const FlashCardProblem = props => {
     const location = useLocation();
@@ -24,11 +24,18 @@ export const FlashCardProblem = props => {
         if (problem.answer === parseInt(answer)) {
             setAnswer('');
             setFeedback('Correct!');
+            props.onAnswer && props.onAnswer(true);
             setProblem(generateProblem());
         }
         else {
             setAnswer('');
-            setFeedback('Try Again');
+            if (props.onAnswer && props.onAnswer(false)) {
+                setFeedback('Try Another');
+                setProblem(generateProblem());
+            }
+            else {
+                setFeedback('Try Again');
+            }
         }
     };
 
