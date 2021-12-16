@@ -2,6 +2,7 @@ import React from 'react'
 import {useLocation} from 'react-router-dom';
 
 import Box from 'Components/Box.jsx';
+import Button from 'Components/Button.jsx';
 
 const createProblemCountLifecycle = (remainingCount, correctCount, incorrectCount, isInactive) => {
     return {
@@ -66,7 +67,7 @@ export const TopicLifecycle = props => {
             return (
                 <Box height='100%'>
                     <p>{lifecycleState.initialText()}</p>
-                    <button onClick={() => setLifecycleState(createLifecycle())}>Start</button>
+                    <Button onClick={() => setLifecycleState(createLifecycle())}>Start</Button>
                 </Box>
             );
         }
@@ -74,7 +75,7 @@ export const TopicLifecycle = props => {
             return (
                 <Box height='100%'>
                     <p>{lifecycleState.completeText()}</p>
-                    <button onClick={() => setLifecycleState(createLifecycle())}>Try Again</button>
+                    <Button onClick={() => setLifecycleState(createLifecycle())}>Try Again</Button>
                </Box>
             );
         }
