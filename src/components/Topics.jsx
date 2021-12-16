@@ -23,9 +23,9 @@ const threeSquareLayout = (values, unknownIndex) => {
 const leftSideLayout = (leftSide, scale) => {
     return (userAnswer, validateInput) => (
         <Box direction='row'>
-            <Box><FlashCardText scale={0.75}>{'' + leftSide}</FlashCardText></Box>
-            <Box><FlashCardSquareText scale={0.75}>=</FlashCardSquareText></Box>
-            <Box><FlashCardUnknown value={userAnswer} onChange={validateInput} scale={0.8} placeholder='?' autoFocus /></Box>
+            <Box><FlashCardText scale={scale}>{'' + leftSide}</FlashCardText></Box>
+            <Box><FlashCardSquareText scale={scale}>=</FlashCardSquareText></Box>
+            <Box><FlashCardUnknown value={userAnswer} onChange={validateInput} scale={scale} placeholder='?' autoFocus /></Box>
         </Box>    
     );
 };
