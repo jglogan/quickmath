@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
 
-import Box from './Box.jsx';
+import Box from 'Components/Box.jsx';
 import TopicLifecycle from 'Components/TopicLifecycle.jsx';
 import TopicList from 'Components/TopicList.jsx';
 import topics from 'Components/Topics.jsx';
