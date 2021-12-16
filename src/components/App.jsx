@@ -8,9 +8,13 @@ import topics from 'Components/Topics.jsx';
 
 //
 //  TODO:
-//    - Topic lifecycle, with start and end cards, 10 questions, progress, and scoring.
-//    - Timed topic lifecycle.
-//    - Record best daily result per topic, and chart results.
+//    - Style buttons.
+//    - Include topic description in initial text.
+//    - Record score and report on completion.
+//    - Record scores in local storage.
+//    - Display best daily scores.
+//    - Improve styling of initial and completion cards.
+//    - Record missed problems.
 //    - Get layout working on tablet and mobile.
 //
 const App = props => {
