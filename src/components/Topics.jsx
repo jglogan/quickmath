@@ -30,9 +30,21 @@ const leftSideLayout = (leftSide, scale) => {
     );
 };
 
+const getSingleDigitNumber = () => {
+    const probs = [0.04, 0.08, 0.16, 0.28, 0.40, 0.52, 0.64, 0.76, 0.88, 1.00];
+    const value = Math.random();
+    return probs.findIndex(limit => value <= limit);
+}
+
+const getPositiveSingleDigitNumber = () => {
+    const probs = [-0.01, 0.04, 0.09, 0.22, 0.35, 0.48, 0.61, 0.74, 0.87, 1.00];
+    const value = Math.random();
+    return probs.findIndex(limit => value <= limit);
+}
+
 const addition1 = () => {
-    const term1 = Math.floor(Math.random() * 10);
-    const term2 = Math.floor(Math.random() * 10);
+    const term1 = getSingleDigitNumber();
+    const term2 = getSingleDigitNumber();
     const answer = term1 + term2;
     const values = [term1, '+', term2, '=', answer];
     const unknownIndex = 4;
@@ -44,8 +56,8 @@ const addition1 = () => {
 };
 
 const addition2 = () => {
-    const term1 = Math.floor(Math.random() * 10);
-    const term2 = Math.floor(Math.random() * 10);
+    const term1 = getSingleDigitNumber();
+    const term2 = getSingleDigitNumber();
     const answer = term1 + term2;
     const values = [term1, '+', term2, '=', answer];
     const unknownIndex = [0, 2, 4][Math.floor(Math.random() * 3)];
@@ -57,8 +69,8 @@ const addition2 = () => {
 };
 
 const multiplication1 = () => {
-    const term1 = Math.floor(Math.random() * 10);
-    const term2 = Math.floor(Math.random() * 10);
+    const term1 = getSingleDigitNumber();
+    const term2 = getSingleDigitNumber();
     const answer = term1 * term2;
     const values = [term1, '\u00d7', term2, '=', answer];
     const unknownIndex = 4;
@@ -70,8 +82,8 @@ const multiplication1 = () => {
 };
 
 const multiplication2 = () => {
-    const term1 = Math.floor(Math.random() * 9) + 1;
-    const term2 = Math.floor(Math.random() * 9) + 1;
+    const term1 = getPositiveSingleDigitNumber();
+    const term2 = getPositiveSingleDigitNumber();
     const answer = term1 * term2;
     const values = [term1, '\u00d7', term2, '=', answer];
     const unknownIndex = [0, 2, 4][Math.floor(Math.random() * 3)];
@@ -84,7 +96,7 @@ const multiplication2 = () => {
 
 const greatestCommonDivisor = () => {
     const primes = [2, 3, 5, 7];
-    const gcd = Math.floor(Math.random() * 9) + 1;
+    const gcd = getPositiveSingleDigitNumber();
     const index = Math.floor(Math.random() * primes.length);
     const factor1 = primes[index] * gcd;
     primes.splice(index, 1);
