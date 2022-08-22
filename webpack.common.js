@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin');
 
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
 const defaultInclude = path.resolve(__dirname, 'src')
@@ -44,7 +45,12 @@ module.exports = {
       // both options are optional
       filename: 'bundle.css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'static', to: '.' },
+      ],
+    }),
   ],
   resolve: {
     alias: {
